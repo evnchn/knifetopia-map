@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Knifetopia 大刀會</title>
+  <link rel="icon" type="image/x-icon" href="https://knifetopia.evnchn.io/favicon.ico">
+
+  <meta property="og:title" content="Knifetopia 大刀會">
+  <meta property="og:description" content="Hong Kong is an international Knifetopia 香港是個國際大刀會">
+  <meta property="og:image" content="https://knifetopia.evnchn.io/android-chrome-512x512.png">
+  <meta property="og:url" content="https://knifetopia.evnchn.io">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.9.0/proj4.min.js"
+    integrity="sha512-Y/B11KRfeaNHAonSdwnF0fvpzsA+W27fqfMPmfkxRAwuySCcA7aT9LfJcWz5fi32McMI02jngFYj7LYT1z+VVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.2/proj4leaflet.min.js"
+    integrity="sha512-GsAYl1wxzWW6azVpXkhyYfjMb2LbaOnlrqWMBdAk9xDcilinFvGMN+48Ajp/10u/9lcnh8YyS2CYNgung7ewHg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    html,
+    body,
+    #map {
+      height: 100%;
+      width: 100vw;
+    }
+
+    #map {
+      filter: invert(100%) brightness(150%);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="map"></div>
+  <script>
+    var mymap = L.map('map').setView([22.340813, 114.202241], 11);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 20
+    }).addTo(mymap);
+    L.marker([22.340813, 114.202241]).addTo(mymap)
+      .bindPopup('<b>Diamond Hill</b><br><a href="https://zh.m.wikipedia.org/zh-hk/鑽石山荷里活廣場斬人案">鑽石山荷里活廣場斬人案</a>').openPopup();
+
+    L.marker([22.334884, 114.208199]).addTo(mymap)
+      .bindPopup('<b>Choi Hung</b><br><a href="https://www.hk01.com/article/906881">牛池灣行人隧道斬人案</a>');
+
+    L.marker([22.315594, 114.264392]).addTo(mymap)
+      .bindPopup('<b>Hang Hau</b><br><a href="https://www.hk01.com/article/889002">將軍澳坑口迷魂黨</a>');
+
+    L.marker([22.307455, 114.260016]).addTo(mymap)
+      .bindPopup('<b>Tsueng Kwan O</b><br><a href="https://www.hk01.com/article/889002">將軍澳坑口迷魂黨</a>');
+
+    L.marker([22.285942, 114.135337]).addTo(mymap)
+      .bindPopup('<b>Sai Wan</b><br><a href="https://www.hk01.com/article/910864">西環麥當勞斬人案</a>');
+
+
+    L.marker([22.279825, 114.172903]).addTo(mymap)
+      .bindPopup('<b>Wan Chai</b><br><a href="https://hk.on.cc/hk/bkn/cnt/news/20230620/bkn-20230620121520903-0620_00822_001.html">灣仔入境處藏刀非裔漢</a>');
+
+    L.marker([22.319576, 114.235716]).addTo(mymap)
+      .bindPopup('<b>Sau Mau Ping</b><br><a href="https://www.hk01.com/article/911063">秀茂坪籃球場傷人案</a>');
+
+    L.marker([22.366791, 114.022898]).addTo(mymap)
+      .bindPopup('<b>Tuen Mun</b><br><a href="https://topick.hket.com/article/3554128">屯門大欖涌村男子胸口中刀亡</a>');
+
+    L.marker([22.448079, 114.175960]).addTo(mymap)
+      .bindPopup('<b>Tai Po</b><br><a href="https://www.hk01.com/article/911762">大埔逾10名青少年遇襲釀5傷</a>');
+
+    L.marker([22.296434, 114.238660]).addTo(mymap)
+      .bindPopup('<b>Yau Tong</b><br><a href="https://www.hk01.com/article/907454">油塘大本型男子持生果刀嚇煞途人</a>');
+
+    L.marker([22.341436, 114.194414]).addTo(mymap)
+      .bindPopup('<b>Wong Tai Sin</b><br><a href="https://www.hk01.com/article/907399">黃大仙中心學生遭建築工追嚇</a>');
+  </script>
+</body>
+
+</html>
